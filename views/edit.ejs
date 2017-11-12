@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <h1>Edit meerkat <%=meer.name%></h1>
+        <form action="/change/<%=meer._id%>" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" value="<%=meer.name%>"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td>Favorite color:</td>
+                    <td><input type="text" name="favorite_color" value="<%=meer.favorite_color%>"></td>
+                </tr>
+                <br>
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <form action="/delete/<%=meer._id%>" method="post">
+            <input type="submit" value="DELETE THIS MEERKAT">
+        </form>          
+    </body>
+    <% if(typeof(errors) != 'undefined' ) { %>
+        <span style="color: red">Something went wrong</span>
+        <p><%= errors%></p>
+        <% for (var x in errors) { %>
+            <h3><%= errors[x].messages %></h3>
+        <% } %>
+    <% } %>
+</html>

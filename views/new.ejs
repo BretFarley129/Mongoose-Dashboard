@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <h1>Add a new meerkat</h1>
+        <form action="/add" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td>Favorite color:</td>
+                    <td><input type="text" name="favorite_color"></td>
+                </tr>
+                <br>
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+        <br>            
+    </body>
+    <% if(typeof(errors) != 'undefined' ) { %>
+        <span style="color: red">Something went wrong</span>
+        <p><%= errors%></p>
+        <% for (var x in errors) { %>
+            <h3><%= errors[x].messages %></h3>
+        <% } %>
+    <% } %>
+</html>

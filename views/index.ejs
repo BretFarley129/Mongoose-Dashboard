@@ -1,0 +1,11 @@
+<body>
+    <h1>Here are the Meerkats!</h1>
+    <% for (var x in arr) { %>
+        <p>Meerkat's json:<%= arr[x] %></p>
+        <p>Meerkat's name:<%= arr[x].name %></p>
+        <p>Favorite color:<%= arr[x].favorite_color %></p>
+        <a href="meerkats/<%= arr[x]._id%>">check this out</a>
+        <hr>
+    <% } %>
+    <a href="/meerkats/new"> Add another Meerkat</a>
+</body>
